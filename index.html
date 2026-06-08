@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MSK Software</title>
+  <meta name="description" content="Apps by MSK Software / Super Root Media Hub.">
+  <style>
+    :root {
+      --text: #1a1a1a;
+      --text-muted: #555;
+      --bg: #fafafa;
+      --card-bg: #ffffff;
+      --border: #e5e5e5;
+      --accent: #0070f3;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --text: #f0f0f0;
+        --text-muted: #a8a8a8;
+        --bg: #0f0f0f;
+        --card-bg: #1a1a1a;
+        --border: #2a2a2a;
+        --accent: #4a9eff;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 32px 24px 64px;
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--bg);
+    }
+    h1 { font-size: 36px; margin: 8px 0; letter-spacing: -0.02em; }
+    h2 { font-size: 22px; margin-top: 36px; margin-bottom: 12px; }
+    p { margin: 12px 0; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .tagline { color: var(--text-muted); font-size: 18px; margin: 0 0 24px; }
+    .app-card {
+      display: block;
+      padding: 18px 20px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--card-bg);
+      margin: 12px 0;
+      color: var(--text);
+      text-decoration: none;
+    }
+    .app-card:hover { border-color: var(--accent); text-decoration: none; }
+    .app-card strong { display: block; font-size: 18px; margin-bottom: 4px; }
+    .app-card span { color: var(--text-muted); font-size: 14px; }
+    footer {
+      margin-top: 64px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <h1>MSK Software</h1>
+  <p class="tagline">Independent apps from Manitoba, Canada.</p>
+
+  <h2>Apps</h2>
+  <a href="/nearmeep/" class="app-card">
+    <strong>NearMeep</strong>
+    <span>Real-time radar for finding your friends nearby.</span>
+  </a>
+
+  <p>Questions? Email <a href="mailto:msksoftware@yahoo.ca">msksoftware@yahoo.ca</a></p>
+
+  <footer>
+    &copy; 2026 Super Root Media Hub, Manitoba, Canada.
+  </footer>
+</body>
+</html>
