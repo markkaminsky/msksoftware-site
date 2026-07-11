@@ -34,9 +34,15 @@
   </nav>
 
   <h1>NearMeep Privacy Policy</h1>
-  <p class="effective"><strong>Effective date:</strong> June 10, 2026</p>
+  <p class="effective"><strong>Effective date:</strong> June 22, 2026</p>
 
   <p>NearMeep lets you and your friends share location, drop beacons, and send voice clips. This policy explains what data the app uses and where it goes.</p>
+
+  <h2>Who we are</h2>
+  <p>NearMeep is operated by Mark Kaminsky, based in Manitoba, Canada — the party accountable for the personal information described here. Questions: <a href="mailto:msksoftware@yahoo.ca">msksoftware@yahoo.ca</a>.</p>
+
+  <h2>Where your data lives</h2>
+  <p>NearMeep stores data in its cloud backend, which runs on Apple's CloudKit — we don't operate separate servers of our own. To make the app work, some records (your profile, your hashed phone number, and your live location) are kept in a <strong>shared</strong> database that other NearMeep users can query — for example, so friends can see you on the radar and so people can find you by contact match. These are not in a private, only-you area of iCloud.</p>
 
   <hr>
 
@@ -45,14 +51,14 @@
   <h3>Precise location</h3>
   <ul>
     <li><strong>Why:</strong> Shown to friends you've added so they can see you on the radar.</li>
-    <li><strong>Where:</strong> Apple iCloud / CloudKit only — not our servers.</li>
-    <li><strong>Control:</strong> Turn off "Appear on friends' radar" in the Me tab anytime.</li>
+    <li><strong>Where:</strong> In NearMeep's shared CloudKit database, so the friends you've added can see you on the radar.</li>
+    <li><strong>Control:</strong> Off by default — you turn it on during setup, and can turn off "Appear on friends' radar" in the Me tab anytime.</li>
   </ul>
 
   <h3>Microphone</h3>
   <ul>
     <li><strong>Why:</strong> Short voice clips and voice drops you choose to record.</li>
-    <li><strong>Where:</strong> CloudKit, readable only by intended recipients.</li>
+    <li><strong>Where:</strong> In NearMeep's shared CloudKit database, addressed to the friends you send them to.</li>
   </ul>
 
   <h3>Contacts &amp; phone number</h3>
@@ -64,7 +70,13 @@
   <h3>User identifier</h3>
   <ul>
     <li><strong>Why:</strong> Friend connections and account identity via iCloud.</li>
-    <li><strong>Where:</strong> CloudKit, linked to your Apple ID.</li>
+    <li><strong>Where:</strong> In NearMeep's shared CloudKit database, used to link friends.</li>
+  </ul>
+
+  <h3>Profile &amp; messages</h3>
+  <ul>
+    <li><strong>Why:</strong> Your display name, status/vibe, short text bubbles, beacon labels, and the device name attached to voice drops are shown to friends and nearby users so the app is useful.</li>
+    <li><strong>Where:</strong> NearMeep's shared CloudKit database. Most are short-lived — see "How long data lives" below.</li>
   </ul>
 
   <hr>
@@ -73,7 +85,7 @@
   <ul>
     <li>No ads, no analytics SDKs, no third-party tracking</li>
     <li>No selling or sharing your data</li>
-    <li>No servers we operate — data stays in Apple iCloud</li>
+    <li>No separate servers of our own — the backend runs on Apple's CloudKit</li>
   </ul>
 
   <hr>
@@ -82,14 +94,14 @@
   <ul>
     <li><strong>Location:</strong> one record per user, overwritten with each update — there is no location history. Friends stop seeing positions older than 30 minutes.</li>
     <li><strong>Waves:</strong> expire after 60 seconds. <strong>Status bubbles:</strong> 5 minutes. <strong>Vibe status:</strong> 2 hours.</li>
-    <li><strong>Voice clips:</strong> deleted when the recipient plays them. <strong>Voice drops and beacons:</strong> expire on the schedule you pick when creating them.</li>
+    <li><strong>Voice clips:</strong> kept until the recipient deletes them (swipe to delete in the walkie-talkie list) or either person deletes their account — they don't auto-expire. <strong>Voice drops and beacons:</strong> expire on the schedule you pick when creating them.</li>
     <li>Nothing accumulates into a feed or timeline.</li>
   </ul>
 
   <hr>
 
   <h2>Children</h2>
-  <p>NearMeep is not directed at children under 13.</p>
+  <p>NearMeep is intended for users 16 and older and is not directed at anyone under 16. We do not knowingly collect personal information from people under 16; if we learn that we have, we will delete it.</p>
 
   <hr>
 
@@ -99,11 +111,21 @@
 
   <hr>
 
+  <h2>Your rights</h2>
+  <p>You can access, correct, or delete the personal information we hold about you. Edit your name any time in the app, delete everything via <strong>Me &rarr; Settings &rarr; Account &rarr; Delete My Data</strong>, or email <a href="mailto:msksoftware@yahoo.ca">msksoftware@yahoo.ca</a> to request access or a correction. We respond within a reasonable time, as required by Canadian privacy law (PIPEDA).</p>
+
+  <hr>
+
+  <h2>Changes to this policy</h2>
+  <p>We may update this policy from time to time. When we do, we'll revise the effective date above; for significant changes we'll give more prominent notice, such as an in-app notice.</p>
+
+  <hr>
+
   <h2>Contact</h2>
   <p>Questions: <a href="mailto:msksoftware@yahoo.ca">msksoftware@yahoo.ca</a></p>
 
   <footer>
-    &copy; 2026 Super Root Media Hub · <a href="mailto:msksoftware@yahoo.ca">msksoftware@yahoo.ca</a>
+    &copy; 2026 Mark Kaminsky · <a href="mailto:msksoftware@yahoo.ca">msksoftware@yahoo.ca</a>
   </footer>
 </body>
 </html>
