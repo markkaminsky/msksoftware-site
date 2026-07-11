@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add me on NearMeep</title>
+  <style>
+    :root { color-scheme: dark; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center;
+      background: #0b0f1a; color: #fff; padding: 24px;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro", system-ui, sans-serif;
+    }
+    .card { max-width: 420px; width: 100%; text-align: center; }
+    h1 { font-size: 26px; margin: 8px 0 6px; font-weight: 800; }
+    p { color: rgba(255,255,255,0.7); line-height: 1.5; font-size: 15px; }
+    .logo { width: 96px; height: 96px; border-radius: 22px; margin: 0 auto 18px;
+            background: radial-gradient(circle at 50% 45%, #14e0d0 0%, #6a5cff 45%, #ff9d3c 100%);
+            box-shadow: 0 8px 40px rgba(20,224,208,0.35); }
+    .btn { display: block; width: 100%; padding: 16px; margin-top: 18px; border-radius: 14px;
+           background: #14e0d0; color: #06202a; font-weight: 700; font-size: 17px;
+           text-decoration: none; }
+    .code { margin-top: 18px; padding: 14px; border-radius: 12px; background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(20,224,208,0.35); font-family: ui-monospace, monospace;
+            font-size: 13px; word-break: break-all; color: #cfeeea; }
+    .copy { margin-top: 10px; background: none; border: 1px solid rgba(255,255,255,0.25);
+            color: #fff; padding: 10px 16px; border-radius: 10px; font-size: 14px; cursor: pointer; }
+    .steps { margin-top: 22px; text-align: left; font-size: 14px; color: rgba(255,255,255,0.75); }
+    .steps li { margin: 6px 0; }
+    .hide { display: none; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="logo"></div>
+    <h1>Add me on NearMeep</h1>
+    <p>NearMeep shows your friends on a live radar and lets you drop beacons at spots that matter.</p>
+
+    <a class="btn" href="https://apps.apple.com/app/id6762570367">Get NearMeep on the App Store</a>
+
+    <div id="codeBox" class="hide">
+      <ol class="steps">
+        <li>Install NearMeep and open it.</li>
+        <li>Tap <strong>Add Friend → Enter a friend code</strong>.</li>
+        <li>Paste this code:</li>
+      </ol>
+      <div class="code" id="code"></div>
+      <button class="copy" id="copyBtn">Copy code</button>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      var code = params.get('u');
+      var re = /^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/;
+      if (code && re.test(code)) {
+        document.getElementById('code').textContent = code;
+        document.getElementById('codeBox').classList.remove('hide');
+        document.getElementById('copyBtn').addEventListener('click', function () {
+          navigator.clipboard.writeText(code).then(function () {
+            document.getElementById('copyBtn').textContent = 'Copied ✓';
+          });
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

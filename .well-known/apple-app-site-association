@@ -1,0 +1,15 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "65R6QJD7F9.com.superrootmediahub.allin",
+        "paths": ["/nearmeep/add", "/nearmeep/add/", "/nearmeep/add/*"]
+      },
+      {
+        "appID": "LFWJ84YSBW.com.superrootmediahub.allin",
+        "paths": ["/nearmeep/add", "/nearmeep/add/", "/nearmeep/add/*"]
+      }
+    ]
+  }
+}
