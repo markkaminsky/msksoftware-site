@@ -52,10 +52,20 @@
 
   <script>
     (function () {
+      // Two invite formats:
+      //   ?c=7K2QW9  — 6-char friend short code (current)
+      //   ?u=<UUID>  — legacy full-ID links; must keep working forever,
+      //                they're already out in the wild in old messages.
+      // The unambiguous-base32 alphabet for short codes has no 0/O or 1/I/L.
       var params = new URLSearchParams(window.location.search);
-      var code = params.get('u');
-      var re = /^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/;
-      if (code && re.test(code)) {
+      var short = params.get('c');
+      var uuid = params.get('u');
+      var shortRe = /^[2-9A-HJKMNP-Z]{6}$/i;
+      var uuidRe = /^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/;
+      var code = null;
+      if (short && shortRe.test(short)) { code = short.toUpperCase(); }
+      else if (uuid && uuidRe.test(uuid)) { code = uuid; }
+      if (code) {
         document.getElementById('code').textContent = code;
         document.getElementById('codeBox').classList.remove('hide');
         document.getElementById('copyBtn').addEventListener('click', function () {
