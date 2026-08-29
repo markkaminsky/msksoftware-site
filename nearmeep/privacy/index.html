@@ -35,7 +35,7 @@
   </nav>
 
   <h1>NearMeep Privacy Policy</h1>
-  <p class="effective"><strong>Effective date:</strong> August 22, 2026</p>
+  <p class="effective"><strong>Effective date:</strong> August 29, 2026</p>
 
   <p>NearMeep lets you and your friends share location, drop beacons, and send voice clips. This policy explains what data the app uses and where it goes.</p>
 
@@ -51,22 +51,22 @@
 
   <h3>Precise location</h3>
   <ul>
-    <li><strong>Why:</strong> Shown to friends you've added so they can see you on the radar.</li>
-    <li><strong>Where:</strong> In NearMeep's shared CloudKit database, so the friends you've added can see you on the radar.</li>
+    <li><strong>Why:</strong> Shown to friends you've added so they can see you on the radar and in friend-finder mode.</li>
+    <li><strong>Where:</strong> In NearMeep's shared CloudKit database, so the friends you've added can see you on the radar. Your location is also sent to Apple Maps by two optional features — see "Maps &amp; place search" below.</li>
     <li><strong>Control:</strong> Off by default — you turn it on during setup, and can turn off "Appear on friends' radar" in the Me tab anytime.</li>
+  </ul>
+
+  <h3>Maps &amp; place search</h3>
+  <ul>
+    <li><strong>Why:</strong> The radar's <strong>street map</strong> draws real streets under the radar disc so distances line up with the ground, and <strong>Find Places</strong> searches for somewhere near you. Both ask Apple Maps for map data.</li>
+    <li><strong>Where:</strong> To Apple, as ordinary Apple Maps requests, under Apple's privacy policy. We never receive, store, or log them, and no company other than Apple is involved.</li>
+    <li><strong>Control:</strong> The street map is a toggle — the map button on the radar, or Me &rarr; Settings &rarr; Street map. It is on by default; turn it off and the app makes no map requests. Find Places runs only when you open it and type a search.</li>
   </ul>
 
   <h3>Microphone</h3>
   <ul>
     <li><strong>Why:</strong> Short voice clips and voice drops you choose to record.</li>
     <li><strong>Where:</strong> In NearMeep's shared CloudKit database, addressed to the friends you send them to.</li>
-  </ul>
-
-  <h3>Camera</h3>
-  <ul>
-    <li><strong>Why:</strong> Look mode draws your friends and beacons in their real directions over the live view through your camera, so you can point the phone and see which way to walk.</li>
-    <li><strong>Where:</strong> Nowhere. Camera frames are drawn on your device in real time and are never recorded, saved to your photo library, written to disk, or uploaded. The app builds no map, mesh, or scan of your surroundings — it only needs to know which way the phone is pointing.</li>
-    <li><strong>Control:</strong> Requested only the first time you open Look mode, and Look mode is optional — every other part of the app works without it. Revoke any time in iOS Settings &rarr; Privacy &rarr; Camera.</li>
   </ul>
 
   <h3>Contacts &amp; phone number</h3>
@@ -93,8 +93,8 @@
   <ul>
     <li>No ads, no analytics SDKs, no third-party tracking</li>
     <li>No selling or sharing your data</li>
-    <li>No photos or video captured or stored — the Look mode camera preview is drawn live on your device and is never recorded, saved, or uploaded, and we build no scan or 3D map of your surroundings</li>
-    <li>No separate servers of our own — the backend runs on Apple's CloudKit</li>
+    <li>No camera use at all — the app requests no camera permission, captures no photos or video, and builds no scan or 3D map of your surroundings</li>
+    <li>No separate servers of our own — the backend runs on Apple's CloudKit, and the only other thing leaving your device is the Apple Maps requests described above</li>
   </ul>
 
   <hr>
