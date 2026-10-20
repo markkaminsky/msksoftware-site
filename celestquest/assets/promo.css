@@ -1,0 +1,81 @@
+/* CelestQuest promo page (msksoftware.info/celestquest/). Builds on site.css: same night, brass and HUD blue as the app. */
+body.promo { background: var(--night); }
+body.promo::before { display: none; }
+body.promo main { max-width: none; margin: 0; padding: 0; }
+
+/* ---------- hero: Orion, lettered the way the app letters the sky ---------- */
+.hero { position: relative; min-height: min(92vh, 860px); display: flex; align-items: center; overflow: hidden;
+  background: radial-gradient(120% 90% at 72% 40%, #14204a 0%, #0b1328 45%, var(--night) 100%); }
+.hero .chart { position: absolute; inset: 0; width: 100%; height: 100%; }
+.hero::after { content: ''; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(180deg, rgba(6, 9, 20, 0) 72%, var(--night) 100%), linear-gradient(90deg, rgba(6, 9, 20, .92) 0%, rgba(6, 9, 20, .72) 34%, rgba(6, 9, 20, 0) 62%); }
+.hero-text { position: relative; z-index: 1; width: 100%; max-width: 1180px; margin: 0 auto; padding: 72px 32px; }
+.hero-text > * { max-width: 520px; }
+.hero-icon { width: 76px; height: 76px; border-radius: 18px; box-shadow: 0 10px 30px rgba(0, 0, 0, .55); display: block; margin-bottom: 26px; }
+.hero h1 { font: 600 76px/0.95 'Cormorant SC', Georgia, serif; letter-spacing: .07em; margin: 0; color: #fff; }
+.hero .tag { font: italic 600 31px/1.2 'Cormorant Garamond', Georgia, serif; color: var(--hud); margin: 14px 0 0; text-wrap: balance; }
+.hero .lede { font-size: 18px; line-height: 1.65; color: var(--ink); margin: 22px 0 0; }
+.cta { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 22px; margin-top: 30px; }
+.soon { margin: 0; padding: 11px 20px; border-radius: 999px; border: 1px solid rgba(214, 172, 94, .7); color: var(--brass); font-weight: 700; font-size: 16px; }
+.cta a { font-size: 16px; }
+
+/* chart pieces */
+.chart .grid path { fill: none; stroke: rgba(160, 176, 232, .11); stroke-width: 1; }
+.chart .ecliptic { fill: none; stroke: rgba(214, 172, 94, .5); stroke-width: 1.3; stroke-dasharray: 7 7; }
+.chart .ecl-label { font: italic 600 21px 'Cormorant Garamond', Georgia, serif; fill: rgba(214, 172, 94, .85); letter-spacing: .01em; dominant-baseline: text-after-edge; }
+.chart .con { fill: none; stroke: rgba(150, 226, 255, .55); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.chart .stars circle.b { filter: drop-shadow(0 0 4px rgba(255, 255, 255, .55)); }
+.chart .star-name { font: italic 600 22px 'Cormorant Garamond', Georgia, serif; fill: #dfe6ff; }
+.chart .con-name { font: 600 30px 'Cormorant SC', Georgia, serif; letter-spacing: .32em; fill: rgba(150, 226, 255, .8); }
+
+/* the one moment: the stars come out, then Orion's lines link them up, as in the app */
+@media (prefers-reduced-motion: no-preference) {
+  .chart .stars { animation: cq-fade 1.2s ease-out both; }
+  .chart .con { stroke-dasharray: var(--len); stroke-dashoffset: var(--len); animation: cq-draw 1s cubic-bezier(.4, 0, .2, 1) forwards; animation-delay: calc(.9s + var(--i) * .45s); }
+  .chart .star-name, .chart .con-name, .chart .ecl-label { animation: cq-fade .9s ease-out 2.6s both; }
+}
+@keyframes cq-draw { to { stroke-dashoffset: 0; } }
+@keyframes cq-fade { from { opacity: 0; } to { opacity: 1; } }
+
+/* ---------- the app, screen by screen ---------- */
+.shots { max-width: 1180px; margin: 0 auto; padding: 96px 32px 24px; }
+.shots h2, .after h2 { margin: 0 0 6px; }
+.shots .intro { color: var(--muted); max-width: 560px; margin: 0 0 40px; }
+.shot-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 56px 40px; }
+.shot-list li { margin: 0; }
+.shot-list img { display: block; width: 100%; max-width: 300px; height: auto; aspect-ratio: 560 / 1217; border-radius: 30px;
+  box-shadow: 0 0 0 1px rgba(150, 226, 255, .22), 0 20px 46px rgba(0, 0, 0, .55); background: var(--dome); }
+.shot-list h3 { margin: 22px 0 4px; font: italic 600 26px/1.2 'Cormorant Garamond', Georgia, serif; color: #fff; }
+.shot-list p { margin: 0; max-width: 34ch; color: var(--muted); font-size: 16px; line-height: 1.6; }
+
+/* ---------- dark skies, privacy ---------- */
+.after { max-width: 1180px; margin: 0 auto; padding: 72px 32px 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 24px 64px; }
+.after p { max-width: 52ch; }
+.page-foot { max-width: 1180px; margin: 0 auto; padding: 0 32px 56px; }
+.page-foot footer { margin-top: 48px; }
+.page-foot nav { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-bottom: 10px; font-size: 15px; }
+
+/* ---------- smaller screens ---------- */
+@media (max-width: 900px) {
+  .shot-list { grid-template-columns: repeat(2, 1fr); }
+  .hero h1 { font-size: 64px; }
+}
+@media (max-width: 640px) {
+  .hero { display: block; min-height: 0; background: var(--night); }
+  .hero .chart { position: relative; display: block; height: 82vw; max-height: 440px; transform: scale(1.25); transform-origin: 100% 35%; }
+  .hero::after { background: linear-gradient(180deg, rgba(6, 9, 20, 0) 55%, var(--night) 100%); height: 82vw; max-height: 440px; }
+  .hero-text { padding: 8px 16px 40px; margin-top: -52px; }
+  .hero-icon { width: 64px; height: 64px; border-radius: 15px; margin-bottom: 18px; }
+  .hero h1 { font-size: 46px; }
+  .hero .tag { font-size: 25px; }
+  .hero .lede { font-size: 17px; }
+  .shots { padding: 56px 0 8px; }
+  .shots h2, .shots .intro { padding: 0 16px; }
+  .shot-list { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 22px; padding: 4px 16px 18px; scrollbar-width: none; }
+  .shot-list::-webkit-scrollbar { display: none; }
+  .shot-list li { flex: 0 0 72%; scroll-snap-align: center; }
+  .shot-list p { font-size: 15px; }
+  .after { grid-template-columns: 1fr; padding: 48px 16px 8px; }
+  .page-foot { padding: 0 16px 40px; }
+}
+:focus-visible { outline: 2px solid var(--hud); outline-offset: 3px; border-radius: 4px; }
