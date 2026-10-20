@@ -1,0 +1,64 @@
+/* msksoftware.help/celestquest: CelestQuest support and privacy pages */
+@font-face { font-family: 'Cormorant SC'; font-style: normal; font-weight: 600; font-display: swap; src: url(/celestquest/assets/cormorant-sc-latin-600-normal.woff2) format('woff2'); }
+@font-face { font-family: 'Cormorant Garamond'; font-style: italic; font-weight: 600; font-display: swap; src: url(/celestquest/assets/cormorant-garamond-latin-600-italic.woff2) format('woff2'); }
+@font-face { font-family: 'Atkinson Hyperlegible'; font-style: normal; font-weight: 400; font-display: swap; src: url(/celestquest/assets/atkinson-hyperlegible-latin-400-normal.woff2) format('woff2'); }
+@font-face { font-family: 'Atkinson Hyperlegible'; font-style: normal; font-weight: 700; font-display: swap; src: url(/celestquest/assets/atkinson-hyperlegible-latin-700-normal.woff2) format('woff2'); }
+
+:root {
+  --night: #060914; --dome: #0b1328; --ink: #e1e5f5; --muted: #a3abcb; --brass: #d6ac5e; --brass-ink: #1b1406;
+  --hud: #96e2ff; --hair: rgba(160, 176, 232, 0.18); --panel: rgba(14, 21, 48, 0.72);
+  color-scheme: dark;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { background: var(--night); -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; min-height: 100vh; color: var(--ink);
+  font: 17px/1.6 'Atkinson Hyperlegible', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  background: radial-gradient(130% 60% at 50% 0%, #16224d 0%, var(--dome) 42%, var(--night) 100%) no-repeat, var(--night);
+}
+body::before {   /* a light sprinkle of stars */
+  content: ''; position: fixed; inset: 0; pointer-events: none; opacity: 0.6;
+  background-image:
+    radial-gradient(1.2px 1.2px at 8% 12%, #fff 50%, transparent 52%), radial-gradient(1px 1px at 23% 31%, #cfe0ff 50%, transparent 52%),
+    radial-gradient(1.4px 1.4px at 41% 9%, #fff 50%, transparent 52%), radial-gradient(1px 1px at 63% 22%, #ffe9c4 50%, transparent 52%),
+    radial-gradient(1.3px 1.3px at 82% 14%, #fff 50%, transparent 52%), radial-gradient(1px 1px at 92% 37%, #cfe0ff 50%, transparent 52%),
+    radial-gradient(1px 1px at 14% 58%, #fff 50%, transparent 52%), radial-gradient(1.2px 1.2px at 33% 77%, #ffe9c4 50%, transparent 52%),
+    radial-gradient(1px 1px at 57% 63%, #fff 50%, transparent 52%), radial-gradient(1.3px 1.3px at 76% 84%, #cfe0ff 50%, transparent 52%),
+    radial-gradient(1px 1px at 88% 66%, #fff 50%, transparent 52%), radial-gradient(1px 1px at 5% 90%, #fff 50%, transparent 52%);
+}
+main { position: relative; max-width: 680px; margin: 0 auto; padding: 44px 16px 56px; }
+a { color: var(--hud); text-underline-offset: 3px; }
+a:hover { color: #c9f1ff; }
+.crumb { font-size: 15px; margin: 0 0 28px; }
+.crumb a { text-decoration: none; }
+
+header.app { display: flex; gap: 18px; align-items: center; margin-bottom: 26px; }
+header.app img { width: 88px; height: 88px; flex: none; border-radius: 20px; box-shadow: 0 8px 28px rgba(0, 0, 0, 0.5); }
+h1 { margin: 0; font: 600 44px/1.05 'Cormorant SC', Georgia, 'Times New Roman', serif; letter-spacing: 0.02em; color: #fff; }
+.tag { margin: 6px 0 0; font: italic 600 21px/1.3 'Cormorant Garamond', Georgia, serif; color: var(--hud); }
+h2 { margin: 42px 0 8px; font: italic 600 28px/1.2 'Cormorant Garamond', Georgia, serif; color: #fff; }
+h3 { margin: 22px 0 4px; font-size: 17px; font-weight: 700; color: #fff; }
+p { margin: 10px 0; }
+ul, ol { margin: 10px 0; padding-left: 1.35em; }
+li { margin: 7px 0; }
+li::marker { color: var(--muted); }
+strong, .ui { color: #fff; font-weight: 700; }
+.muted { color: var(--muted); }
+.card { margin: 18px 0; padding: 18px 20px; background: var(--panel); border: 1px solid var(--hair); border-radius: 16px; }
+.card p:first-child { margin-top: 0; }
+.card p:last-child { margin-bottom: 0; }
+.button { display: inline-block; margin-top: 4px; padding: 12px 22px; border-radius: 999px; background: var(--brass); color: var(--brass-ink);
+  font-weight: 700; text-decoration: none; }
+.button:hover { background: #e6bf74; color: var(--brass-ink); }
+.apps { list-style: none; padding: 0; }
+.apps li { display: flex; gap: 16px; align-items: center; margin: 0; }
+.apps img { width: 64px; height: 64px; border-radius: 15px; flex: none; }
+.apps .name { font: 600 28px/1.1 'Cormorant SC', Georgia, serif; color: #fff; }
+footer { margin-top: 56px; padding-top: 18px; border-top: 1px solid var(--hair); font-size: 14px; line-height: 1.55; color: var(--muted); }
+footer a { color: var(--muted); }
+@media (max-width: 420px) {
+  main { padding-top: 32px; }
+  h1 { font-size: 38px; }
+  header.app img { width: 72px; height: 72px; border-radius: 17px; }
+  h2 { font-size: 26px; }
+}
